@@ -1,21 +1,16 @@
-import React from 'react';
-
+import React,{Fragment} from "react";
+import NavBar from './NavBar';
+import Content from './Content';
 
 class Post extends React.Component {
+  render() {
+    return <Fragment>
 
+    <NavBar/>
+    <Content/>
 
-render() {
-
-return "CommentPost Component"
-
+    </Fragment>;
+  }
 }
-
-
-
-
-
-
-}
-
 
 export default Post;

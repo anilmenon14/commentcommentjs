@@ -1,38 +1,65 @@
+html {
+  height: 100%
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100;
+  overflow: hidden;
+  margin: 0px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.column {
+height: 100%;
+display: flex;
+flex-direction: column;
+/* justify-content:flex-end; */
+border-style: dotted;
+align-items: stretch;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column div:nth-child(1) {
+  flex-basis: 5vh;
+}
+
+.column div:nth-child(2) {
+  flex-basis: 95vh;
+}
+
+#right {
+  flex-grow: 20;
+}
+
+#left {
+  flex-grow: 1;
+}
+
+.top-left{
+  flex-shrink: 0;
+}
+
+.bottom {
+  overflow-y: auto; /*adds scroll to this container */
+}
+
+
+.bottom ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.bottom ul li {
+border: solid;
+}
+
+
+/* Fill below portions later for mobile and effects */
+@media (prefers-reduced-motion: no-preference) {
+
+}
+
+
+@keyframes {
+
 }
