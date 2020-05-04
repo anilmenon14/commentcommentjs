@@ -1,56 +1,82 @@
-html {
-  height: 100%
+:root {
+  font-family: 'PT Serif' , sans-serif;
+  height: 100%;
+  font-size: 16px;
+  --bg-primary-color: lightblue;
+  --bg-secondary-color: lightgreen;
 }
 
-.App {
-  height: 100;
-  overflow: hidden;
-  margin: 0px;
-  display: flex;
-  box-sizing: border-box;
+body {
+  font-family: 'PT Serif' , sans-serif;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
-.column {
+/* Styling scrollbar */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--bg-primary-color);
+}
+
+
+.navbar {
+  position: fixed;
+  z-index: 1;
+  width: 60px;
+  height:100vh;
+  top: 0;
+  left: 0;
+  background: var(--bg-secondary-color);
+}
+
+
+.page-content {
+margin-left: 60px;
 height: 100%;
 display: flex;
 flex-direction: column;
-/* justify-content:flex-end; */
 border-style: dotted;
-align-items: stretch;
 }
 
-.column div:nth-child(1) {
+.page-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left:60px;
+  right: 0;
+  padding: 10px 10px 10px 30px;
+  z-index: 5;
+  justify-content: space-between;
   flex-basis: 5vh;
+  background-color: #999999;
 }
 
-.column div:nth-child(2) {
+
+.main-post-area {
+  margin-top: calc(40px);
+  padding: 10px 10px 5px 30px;
   flex-basis: 95vh;
+  display: flex;
+  flex-direction: column;
 }
 
-#right {
-  flex-grow: 20;
+.post-area {
+  background-color: lightblue;
+  flex-basis: 40vh;
+  border-style: dashed;
 }
 
-#left {
-  flex-grow: 1;
-}
-
-.top-left{
-  flex-shrink: 0;
-}
-
-.bottom {
-  overflow-y: auto; /*adds scroll to this container */
-}
-
-
-.bottom ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.bottom ul li {
-border: solid;
+.comments-area {
+  background-color: magenta;
+  border-style: dashed;
 }
 
 

@@ -1,12 +1,12 @@
-import React from "react";
+import React,{Fragment} from "react";
 import "../App.css";
-import Post from "./Post.js";
+import Page from "./Page.js";
 
 function App() {
   return (
-    <div className="App">
-      <Post />
-    </div>
+    <Fragment>
+      <Page />
+    </Fragment>
   );
 }
 
