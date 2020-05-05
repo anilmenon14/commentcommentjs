@@ -6,7 +6,7 @@ const NavBar = () => {
       <ul className="navbar-nav">
         <li className="nav-item">
           <a href="#" className="nav-link">
-            <span className="link-text">One</span>
+            <span className="link-text">Feedback</span>
             <svg
               aria-hidden="true"
               focusable="false"
@@ -26,7 +26,7 @@ const NavBar = () => {
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link">
-            <span className="link-text">Two</span>
+            <span className="link-text">GitHub</span>
             <svg
               aria-hidden="true"
               focusable="false"
@@ -46,7 +46,7 @@ const NavBar = () => {
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link">
-            <span className="link-text">Three</span>
+            <span className="link-text">LinkedIn</span>
             <svg
               aria-hidden="true"
               focusable="false"
@@ -67,7 +67,7 @@ const NavBar = () => {
 
         <li className="nav-item">
           <a href="#" className="nav-link">
-            <span className="link-text">Four</span>
+            <span className="link-text">Switch Theme</span>
             <svg
               aria-hidden="true"
               focusable="false"

@@ -68,12 +68,15 @@ width: 240px;
 
 .link-text {
   display: none;
+  opacity: 0;
   margin-left: 5rem;
   flex-basis: 75%;
 }
 
 .navbar:hover .link-text{ /* To display text on hover */
 display: block;
+-webkit-animation: fadeIn 2000ms forwards;
+animation: fadeIn 2000ms forwards;
 }
 
 .nav-link svg {
@@ -143,6 +146,11 @@ border-style: dotted;
 }
 
 
-@keyframes {
-
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
 }
