@@ -118,25 +118,35 @@ display: flex;
 flex-direction: column;
 }
 
+.tab {
+  padding-left: 20px;
+}
+
+
 .page-header {
   display: flex;
   position: fixed;
-  top: 0;
   left:60px;
   right: 0;
   padding: 10px 10px 10px 30px;
   z-index: 1;
   justify-content: space-between;
-  flex-basis: 10vh;
+  align-content: center;
   background-color: var(--bg-primary-color);
   color: var(--text-primary);
 }
 
+.page-header div { /* Style buttons in header to have shadow */
+  padding: 2px;
+  box-shadow: 1px 5px 5px var(--bg-secondary-color);
+  border-radius: 6px;
+  border: solid var(--bg-secondary-color);
+}
+
 
 .main-post-area {
-  margin-top: calc(40px);
+  margin: auto;
   padding: 10px 10px 5px 30px;
-  flex-basis: 90vh;
   display: flex;
   flex-direction: column;
 }
