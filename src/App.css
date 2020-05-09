@@ -1,19 +1,24 @@
 :root {
-  font-family: 'PT Serif' , sans-serif;
   height: 100%;
   font-size: 16px;
-  --bg-primary-color: black;
-  --bg-secondary-color: yellow;
-  --bg-postcomment-color: white;
-  --text-primary : yellow;
-  --text-secondary: black;
+  --bg-primary-color: #000000;
+  --bg-secondary-color: #FFFF00;
+  --bg-postcomment-color: #FFFFFF;
+  --text-primary : #FFFF00;
+  --text-secondary: #000000;
+  --fontfam-primary: 'PT Serif' , sans-serif;
+  --fontfam-secondary: 'Permanent Marker', cursive;
 }
 
 body {
-  font-family: 'PT Serif' , sans-serif;
+  font-family: var(--fontfam-secondary);
   margin: 0;
   padding: 0;
   display: inline-block;
+}
+
+h1 , h2 ,h3 {
+  font-family: var(--fontfam-secondary);
 }
 
 /* Styling scrollbar */
@@ -22,28 +27,169 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: var(--bg-primary-color);
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--bg-primary-color);
+  background: var(--bg-secondary-color);
 }
 
 
 .navbar {
+  background: var(--bg-primary-color);
+}
+
+.link-text {
+  display: none;
+  opacity: 0;
+}
+
+
+.navbar:hover .link-text{ /* To display text on hover */
+-webkit-animation: fadeIn 2000ms forwards;
+animation: fadeIn 2000ms forwards;
+}
+
+.nav-link svg {
+  min-width: 2rem;
+  margin:auto;
+  flex-basis: 25%;
+}
+
+.nav-link:hover ,
+.icon-pg-header:hover ,
+.right-aligned-pg-header:hover {
+  filter: hue-rotate(90deg);
+}
+
+
+.fa-primary{
+  color: var(--bg-secondary-color);
+}
+
+.page-content {
+display: flex;
+flex-direction: column;
+}
+
+.big-tab {
+  padding-left: 40px;
+}
+
+.small-tab {
+  padding-left: 10px;
+}
+
+.reply-icon {
+  filter: invert(99%) sepia(99%) saturate(7495%) hue-rotate(356deg) brightness(102%) contrast(103%);
+  height: 16px;
+  width: 16px;
+}
+
+
+.page-header {
+  display: flex;
+  right: 0;
+  padding: 10px 10px 10px 30px;
+  z-index: 1;
+  justify-content: space-between;
+  align-content: center;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary);
+}
+
+.page-header div { /* Style buttons in header to have shadow */
+  padding: 10px;
+  box-shadow: 1px 5px 5px var(--bg-secondary-color);
+  border-radius: 6px;
+  border: solid var(--bg-secondary-color);
+}
+
+.icon-pg-header {
+  font-family: var(--fontfam-secondary);
+}
+
+.right-aligned-pg-header {
+  align-self: flex-end;
+}
+
+
+.main-post-area {
+  font-family: var(--fontfam-primary);
+  margin: auto;
+  padding: 10px 10px 5px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-area {
+  margin: 10px 0px 10px 0px;
+  background-color: var(--bg-postcomment-color);
+  flex-basis: 40vh;
+  border: solid;
+  border-radius: 12px;
+  padding: 30px;
+
+}
+
+.comments-area {
+  background-color: var(--bg-postcomment-color);
+  border: solid;
+  border-radius: 12px;
+  padding: 0px 30px 10px 30px;
+}
+
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+
+  body {
+    margin-bottom: 60px; /* Margin to prevent overlap with navbar at bottom  */
+  }
+
+
+.navbar {
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  justify-content: center;
+}
+
+.nav-item {
+  width:auto;
+  margin:auto;
+}
+
+main {
+  margin: 0;
+}
+
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+
+.navbar {
   position: fixed;
   z-index: 2;
-  width: 60px;
-  height:100vh;
-  top: 0;
-  left: 0;
   border-right: solid var(--bg-secondary-color);
   background: var(--bg-primary-color);
   transition: width 300ms ease;
-}
-
-.navbar:hover { /* To extend out the navbar on hover */
-width: 240px;
+  width: 60px;
+  left:0;
+  height: 100vh;
 }
 
 .navbar-nav {
@@ -54,6 +200,23 @@ width: 240px;
   flex-direction: column;
   align-items: center;
   height: 100%;
+}
+
+.page-content {
+margin-left: 60px;
+}
+
+.navbar:hover { /* To extend out the navbar on hover */
+width: 240px;
+}
+
+.navbar:hover .link-text{ /* To display text on hover */
+display: inline;
+}
+
+.navbar:hover .nav-link svg{ /* To display text on hover */
+  margin-left: 15px;
+  padding:0;
 }
 
 .nav-link {
@@ -67,11 +230,13 @@ width: 240px;
   transition: all 200ms ease-in-out;
 }
 
-.nav-link:hover {
-  transform: scale(1.1);
-  filter: hue-rotate(90deg);
+.nav-item {
+  width: 100%;
 }
 
+.nav-item:last-child {
+  margin-top: auto;
+}
 
 .link-text {
   display: none;
@@ -82,93 +247,6 @@ width: 240px;
   width:100%
 }
 
-.navbar:hover .link-text{ /* To display text on hover */
-display: block;
--webkit-animation: fadeIn 2000ms forwards;
-animation: fadeIn 2000ms forwards;
-}
-
-.nav-link svg {
-  min-width: 2rem;
-  margin:auto;
-  flex-basis: 25%;
-}
-
-.navbar:hover .nav-link svg{ /* To display text on hover */
-  margin-left: 15px;
-  padding:0;
-}
-
-.nav-item {
-  width: 100%;
-}
-
-.nav-item:last-child {
-  margin-top: auto;
-}
-
-.fa-primary{
-  color: var(--bg-secondary-color);
-}
-
-.page-content {
-margin-left: 60px;
-height: 100%;
-display: flex;
-flex-direction: column;
-}
-
-.tab {
-  padding-left: 20px;
-}
-
-
-.page-header {
-  display: flex;
-  position: fixed;
-  left:60px;
-  right: 0;
-  padding: 10px 10px 10px 30px;
-  z-index: 1;
-  justify-content: space-between;
-  align-content: center;
-  background-color: var(--bg-primary-color);
-  color: var(--text-primary);
-}
-
-.page-header div { /* Style buttons in header to have shadow */
-  padding: 2px;
-  box-shadow: 1px 5px 5px var(--bg-secondary-color);
-  border-radius: 6px;
-  border: solid var(--bg-secondary-color);
-}
-
-
-.main-post-area {
-  margin: auto;
-  padding: 10px 10px 5px 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-.post-area {
-  background-color: var(--bg-postcomment-color);
-  flex-basis: 40vh;
-  border: solid;
-  border-radius: 12px;
-  padding: 30px;
-}
-
-.comments-area {
-  background-color: var(--bg-postcomment-color);
-  border: solid;
-  border-radius: 12px;
-  padding: 10px 30px 10px 30px;
-}
-
-
-/* Fill below portions later for mobile and effects */
-@media (prefers-reduced-motion: no-preference) {
 
 }
 
