@@ -29,6 +29,8 @@ const NavBar = () => {
           <a
             href="https://github.com/anilmenon14/commentcommentjs"
             className="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="link-text">GitHub</span>
             <svg
@@ -53,6 +55,8 @@ const NavBar = () => {
           <a
             href="https://www.linkedin.com/in/anil-menon-3b127aa/"
             className="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="link-text">LinkedIn</span>
             <svg
@@ -75,11 +79,10 @@ const NavBar = () => {
         </li>
 
         <li className="nav-item" id="themeButton">
-            <a href="/" className="nav-link">
-              <span className="link-text">Day Mode</span>
+            <a  className="nav-link">
+              <span id="theme-text" className="link-text">Day Mode</span>
               <svg
-                className="theme-icon"
-                id="nightMode"
+                className="night-mode-icon"
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fad"
@@ -87,7 +90,7 @@ const NavBar = () => {
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
-              
+
               >
                   <path
                     fill="currentColor"
@@ -101,8 +104,7 @@ const NavBar = () => {
                   ></path>
               </svg>
               <svg
-                className="theme-icon"
-                id="dayMode"
+                className="day-mode-icon"
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fad"

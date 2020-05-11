@@ -1,11 +1,6 @@
 :root {
   height: 100%;
   font-size: 16px;
-  --bg-primary-color: #000000;
-  --bg-secondary-color: #FFFF00;
-  --bg-postcomment-color: #FFFFFF;
-  --text-primary : #FFFF00;
-  --text-secondary: #000000;
   --fontfam-primary: 'PT Serif' , sans-serif;
   --fontfam-secondary: 'Permanent Marker', cursive;
 }
@@ -15,7 +10,42 @@ body {
   margin: 0;
   padding: 0;
   display: inline-block;
+
+  --bg-postcomment-color: #FFFFFF;
+
 }
+
+/* Theme css color switching */
+
+.dark {
+  --text-primary : #FFFF00;
+  --text-secondary: #000000;
+  --bg-primary-color: #000000;
+  --bg-secondary-color: #FFFF00;
+  --reply-icon-color : invert(99%) sepia(99%) saturate(7495%) hue-rotate(356deg) brightness(102%) contrast(103%);
+}
+
+.light {
+  --text-primary: #42daf5;
+  --text-secondary: #000000;
+  --bg-primary-color: #ffffff;
+  --bg-secondary-color: #42daf5;
+  --reply-icon-color : invert(91%) sepia(18%) saturate(7094%) hue-rotate(155deg) brightness(97%) contrast(97%);
+}
+
+
+
+#display-theme-icon {
+  display: block;
+}
+
+#nodisplay-theme-icon {
+  display: none;
+}
+
+/* end of theme css colors */
+
+
 
 h1 , h2 ,h3 {
   font-family: var(--fontfam-secondary);
@@ -81,7 +111,7 @@ flex-direction: column;
 }
 
 .reply-icon {
-  filter: invert(99%) sepia(99%) saturate(7495%) hue-rotate(356deg) brightness(102%) contrast(103%);
+  filter: var(--reply-icon-color);
   height: 16px;
   width: 16px;
 }
@@ -138,42 +168,6 @@ flex-direction: column;
   border-radius: 12px;
   padding: 0px 30px 10px 30px;
 }
-
-/* Theme css color switching */
-
-.dark {
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-}
-
-.light {
-  --text-primary: #1f1f1f;
-  --text-secondary: #000000;
-  --bg-primary: #ffffff;
-  --bg-secondary: #e4e4e4;
-}
-
-.solar {
-  --text-primary: #576e75;
-  --text-secondary: #35535c;
-  --bg-primary: #fdf6e3;
-  --bg-secondary: #f5e5b8;
-}
-
-.theme-icon {
-  display: block;
-}
-
-#nightMode {
-  display: none;
-}
-
-#dayMode {
-  display: block;
-}
-
 
 
 /* Small screens */
