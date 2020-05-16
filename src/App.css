@@ -5,14 +5,14 @@
   --fontfam-secondary: 'Permanent Marker', cursive;
 }
 
+
 body {
+  background-color: var(--bg-postcomment-color);
   font-family: var(--fontfam-secondary);
   font-size: var(--font-size);
   margin: 0;
   padding: 0;
   display: inline-block;
-
-  --bg-postcomment-color: #FFFFFF;
 }
 
 /* Theme css color switching */
@@ -23,7 +23,10 @@ body {
   --bg-primary-color: #000000;
   --bg-secondary-color: #FFFF00;
   --reply-icon-color : invert(99%) sepia(99%) saturate(7495%) hue-rotate(356deg) brightness(102%) contrast(103%);
+  --bg-postcomment-color: #000000;
+  --text-postcomment-color: #FFFFFF;
 }
+
 
 .light {
   --text-primary: #42daf5;
@@ -31,6 +34,8 @@ body {
   --bg-primary-color: #ffffff;
   --bg-secondary-color: #42daf5;
   --reply-icon-color : invert(91%) sepia(18%) saturate(7094%) hue-rotate(155deg) brightness(97%) contrast(97%);
+  --bg-postcomment-color: #FFFFFF;
+  --text-postcomment-color: #000000;
 }
 
 button.nav-link{
@@ -164,7 +169,6 @@ flex-direction: column;
 
 .post-area {
   margin: 10px 0px 10px 0px;
-  background-color: var(--bg-postcomment-color);
   flex-basis: 40vh;
   border: solid;
   border-radius: 12px;
@@ -173,10 +177,15 @@ flex-direction: column;
 }
 
 .comments-area {
-  background-color: var(--bg-postcomment-color);
   border: solid;
   border-radius: 12px;
   padding: 0px 30px 10px 30px;
+}
+
+/* Common color scheme for post area and comments area */
+.main-post-area , .post-area, .comments-area {
+  background-color: var(--bg-postcomment-color);
+  color: var(--text-postcomment-color);
 }
 
 .comments-header {
@@ -188,8 +197,16 @@ flex-direction: column;
   display:inline;
 }
 
+.comments-header svg {
+  fill : var(--bg-secondary-color);
+}
+
 .comments-header :last-of-type {
   margin-left: auto;
+}
+
+.child-comment {
+  display: flex;
 }
 
 
