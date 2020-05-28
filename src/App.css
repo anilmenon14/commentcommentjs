@@ -207,6 +207,16 @@ flex-direction: column;
 
 .child-comment {
   display: flex;
+  border: solid var(--bg-secondary-color);
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.pic-avatar {
+  border: solid var(--bg-secondary-color);
+  border-radius: 50%;
+  padding: 1px;
+  margin: 10px;
 }
 
 
